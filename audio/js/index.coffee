@@ -5,6 +5,7 @@ if(Cookies.get("time")?)
 	fastestTime = Cookies.get("time")
 else
 	fastestTime = ""
+audio = new Audio('wow.mp3');
 
 advanceChar = (char) ->
 	nextCharacter = String.fromCharCode(char)
@@ -24,6 +25,7 @@ advanceChar = (char) ->
 				fastestTime = $("#time").text()
 			document.cookie = "time=" + fastestTime
 			$("#fastestTime").text(fastestTime)
+			audio.play();
 	$("#speed").text(computeWPM())
 
 $(document).keypress (e)->
